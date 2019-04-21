@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SuperUtilities
@@ -25,6 +26,7 @@ namespace SuperUtilities
                     trbBackgroundR.Value = Convert.ToInt32(txtBackgroundR.Text);
                     Color clr = Color.FromArgb(trbBackgroundR.Value, trbBackgroundG.Value, trbBackgroundB.Value);
                     lblSample.BackColor = clr;
+                    txtBackgroundHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
                 }
                 else
                 {
@@ -47,6 +49,7 @@ namespace SuperUtilities
             txtBackgroundR.Text = trbBackgroundR.Value.ToString();
             Color clr = Color.FromArgb(trbBackgroundR.Value, trbBackgroundG.Value, trbBackgroundB.Value);
             lblSample.BackColor = clr;
+            txtBackgroundHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
         }
 
         private void txtBackgroundG_TextChanged(object sender, EventArgs e)
@@ -58,6 +61,7 @@ namespace SuperUtilities
                     trbBackgroundG.Value = Convert.ToInt32(txtBackgroundG.Text);
                     Color clr = Color.FromArgb(trbBackgroundR.Value, trbBackgroundG.Value, trbBackgroundB.Value);
                     lblSample.BackColor = clr;
+                    txtBackgroundHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
                 }
                 else
                 {
@@ -80,6 +84,7 @@ namespace SuperUtilities
             txtBackgroundG.Text = trbBackgroundG.Value.ToString();
             Color clr = Color.FromArgb(trbBackgroundR.Value, trbBackgroundG.Value, trbBackgroundB.Value);
             lblSample.BackColor = clr;
+            txtBackgroundHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
         }
 
         private void txtBackgroundB_TextChanged(object sender, EventArgs e)
@@ -91,6 +96,7 @@ namespace SuperUtilities
                     trbBackgroundB.Value = Convert.ToInt32(txtBackgroundB.Text);
                     Color clr = Color.FromArgb(trbBackgroundR.Value, trbBackgroundG.Value, trbBackgroundB.Value);
                     lblSample.BackColor = clr;
+                    txtBackgroundHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
                 }
                 else
                 {
@@ -113,6 +119,7 @@ namespace SuperUtilities
             txtBackgroundB.Text = trbBackgroundB.Value.ToString();
             Color clr = Color.FromArgb(trbBackgroundR.Value, trbBackgroundG.Value, trbBackgroundB.Value);
             lblSample.BackColor = clr;
+            txtBackgroundHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
         }
 
         private void txtFontR_TextChanged(object sender, EventArgs e)
@@ -124,6 +131,7 @@ namespace SuperUtilities
                     trbFontR.Value = Convert.ToInt32(txtFontR.Text);
                     Color clr = Color.FromArgb(trbFontR.Value, trbFontG.Value, trbFontB.Value);
                     lblSample.ForeColor = clr;
+                    txtFontHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
                 }
                 else
                 {
@@ -146,6 +154,7 @@ namespace SuperUtilities
             txtFontR.Text = trbFontR.Value.ToString();
             Color clr = Color.FromArgb(trbFontR.Value, trbFontG.Value, trbFontB.Value);
             lblSample.ForeColor = clr;
+            txtFontHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
         }
 
         private void txtFontG_TextChanged(object sender, EventArgs e)
@@ -157,6 +166,7 @@ namespace SuperUtilities
                     trbFontG.Value = Convert.ToInt32(txtFontG.Text);
                     Color clr = Color.FromArgb(trbFontR.Value, trbFontG.Value, trbFontB.Value);
                     lblSample.ForeColor = clr;
+                    txtFontHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
                 }
                 else
                 {
@@ -179,6 +189,7 @@ namespace SuperUtilities
             txtFontG.Text = trbFontG.Value.ToString();
             Color clr = Color.FromArgb(trbFontR.Value, trbFontG.Value, trbFontB.Value);
             lblSample.ForeColor = clr;
+            txtFontHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
         }
 
         private void txtFontB_TextChanged(object sender, EventArgs e)
@@ -190,6 +201,7 @@ namespace SuperUtilities
                     trbFontB.Value = Convert.ToInt32(txtFontB.Text);
                     Color clr = Color.FromArgb(trbFontR.Value, trbFontG.Value, trbFontB.Value);
                     lblSample.ForeColor = clr;
+                    txtFontHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
                 }
                 else
                 {
@@ -212,6 +224,68 @@ namespace SuperUtilities
             txtFontB.Text = trbFontB.Value.ToString();
             Color clr = Color.FromArgb(trbFontR.Value, trbFontG.Value, trbFontB.Value);
             lblSample.ForeColor = clr;
-        }    
+            txtFontHEX.Text = clr.R.ToString("X2") + clr.G.ToString("X2") + clr.B.ToString("X2");
+        }
+
+        private void txtBackgroundHEX_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string colorstring = txtBackgroundHEX.Text;
+                if(colorstring.Length == 6)
+                {
+                    int R = Int32.Parse(colorstring.Substring(0, 2), NumberStyles.HexNumber);
+                    int G = Int32.Parse(colorstring.Substring(2, 2), NumberStyles.HexNumber);
+                    int B = Int32.Parse(colorstring.Substring(4, 2), NumberStyles.HexNumber);
+                    trbBackgroundR.Value = R;
+                    trbBackgroundG.Value = G;
+                    trbBackgroundB.Value = B;
+                    txtBackgroundR.Text = trbBackgroundR.Value.ToString();
+                    txtBackgroundG.Text = trbBackgroundG.Value.ToString();
+                    txtBackgroundB.Text = trbBackgroundB.Value.ToString();
+                    Color clr = Color.FromArgb(trbBackgroundR.Value, trbBackgroundG.Value, trbBackgroundB.Value);
+                    lblSample.BackColor = clr;
+                }
+            }
+            catch(Exception ex)
+            {
+                if (txtBackgroundHEX.Text.Length > 0)
+                {
+                    MessageBox.Show("Incorrect value");
+                    txtBackgroundHEX.Text = txtBackgroundHEX.Text.Remove(txtBackgroundHEX.Text.Length - 1, 1);
+                }
+            }
+            
+        }
+
+        private void txtFontHEX_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string colorstring = txtFontHEX.Text;
+                if (colorstring.Length == 6)
+                {
+                    int R = Int32.Parse(colorstring.Substring(0, 2), NumberStyles.HexNumber);
+                    int G = Int32.Parse(colorstring.Substring(2, 2), NumberStyles.HexNumber);
+                    int B = Int32.Parse(colorstring.Substring(4, 2), NumberStyles.HexNumber);
+                    trbFontR.Value = R;
+                    trbFontG.Value = G;
+                    trbFontB.Value = B;
+                    txtFontR.Text = trbFontR.Value.ToString();
+                    txtFontG.Text = trbFontG.Value.ToString();
+                    txtFontB.Text = trbFontB.Value.ToString();
+                    Color clr = Color.FromArgb(trbFontR.Value, trbFontG.Value, trbFontB.Value);
+                    lblSample.ForeColor = clr;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (txtFontHEX.Text.Length > 0)
+                {
+                    MessageBox.Show("Incorrect value");
+                    txtFontHEX.Text = txtFontHEX.Text.Remove(txtFontHEX.Text.Length - 1, 1);
+                }
+            }
+        }
     }
 }
