@@ -1,0 +1,10 @@
+E:\C#\SuperUtilities\SuperUtilities\bin\Debug\SuperUtilities.exe
+E:\C#\SuperUtilities\SuperUtilities\bin\Debug\SuperUtilities.pdb
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.csprojResolveAssemblyReference.cache
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.Properties.Resources.resources
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.csproj.GenerateResource.Cache
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.csproj.CoreCompileInputs.cache
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.exe
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.pdb
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.ColorMatchingForm.resources
+E:\C#\SuperUtilities\SuperUtilities\obj\Debug\SuperUtilities.MainMenuForm.resources
