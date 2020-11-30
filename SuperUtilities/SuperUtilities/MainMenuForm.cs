@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SuperUtilities
@@ -18,9 +12,14 @@ namespace SuperUtilities
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if(cmbMode.SelectedItem == "Color Matching")
+            if(cmbMode.SelectedItem.ToString() == "Color Matching")
             {
-                ColorMatchingForm form = new ColorMatchingForm();
+                var form = new ColorMatchingForm();
+                form.ShowDialog();
+            }
+            else if (cmbMode.SelectedItem.ToString() == "New Guid")
+            {
+                var form = new NewGuidForm();
                 form.ShowDialog();
             }
             else

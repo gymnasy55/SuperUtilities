@@ -38,7 +38,7 @@
             this.cmbMode.FormattingEnabled = true;
             this.cmbMode.Items.AddRange(new object[] {
             "Color Matching",
-            "Dictaphone"});
+            "New Guid"});
             this.cmbMode.Location = new System.Drawing.Point(13, 13);
             this.cmbMode.Name = "cmbMode";
             this.cmbMode.Size = new System.Drawing.Size(243, 39);
